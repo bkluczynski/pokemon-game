@@ -13,9 +13,9 @@ def damage_taken
   @hit_points -= 10
 end
 
-def attack(player)
-  player.damage_taken
-end
+# def attack(player)
+#   player.damage_taken
+# end
 
 
 
