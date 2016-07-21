@@ -11,10 +11,5 @@ feature "Attack on player", :type => :feature do
     expect(page).to have_content 'Titus now has 50 HP'
   end
 
-  scenario "switch player button is pressed" do
-    sign_in_and_play
-    click_button 'Attack!'
-    click_button 'Switch Player'
-    expect(page).to have_content 'Titus vs. Karol'
-  end
+
 end
