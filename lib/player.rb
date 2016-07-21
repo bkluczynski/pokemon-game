@@ -11,6 +11,10 @@ DEFAULT_ATTACK = 10
   end
 
   def attack(player)
+    player.receive_damage
+  end
+
+  def receive_damage
     @hit_points -= DEFAULT_ATTACK
   end
 
