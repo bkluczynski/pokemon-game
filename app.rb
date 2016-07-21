@@ -11,7 +11,6 @@ enable :sessions
     session[:player_1_name] = params[:player_1_name]
     session[:player_2_name] = params[:player_2_name]
 
-    session[:player_2_points] = params[:player_2_points]
     redirect '/play'
   end
 
