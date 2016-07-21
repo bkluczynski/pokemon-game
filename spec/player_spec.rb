@@ -13,13 +13,8 @@ describe Player do
 
   describe "#hit_points" do
     it "starts with the default amount of hit points" do
-      expect(titus.hit_points).to eq 60
+      expect(titus.hit_points).to eq described_class::DEFAULT_HIT_POINTS
     end
   end
 
-  describe "#attack" do
-    it "reduces the players hit_points by 10" do
-      expect{ karol.attack(titus) }.to change{ titus.hit_points }.by (-10)
-    end
-  end
 end
