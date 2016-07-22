@@ -23,9 +23,16 @@ enable :sessions
 
   get '/attack' do
     @game = $game
-    $game.attack(@game.player_2)
-    @game.switch_player
+    @game.attack(@game.non_current_turn)
+    # @game.switch_player
+    # @game.attack(@game.current_turn)
     erb :attack
+  end
+
+  get '/switch_player' do
+    @game = $game
+    @game.switch_player
+    redirect '/play'
   end
 
   # start the server if ruby file executed directly
