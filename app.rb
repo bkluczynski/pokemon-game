@@ -12,17 +12,17 @@ enable :sessions
   post '/names' do
     player_1 = Player.new(params[:player_1_name])
     player_2 = Player.new(params[:player_2_name])
-    $game = Game.new(player_1, player_2)
+    @game = Game.create(player_1, player_2)
     redirect '/play'
   end
 
   get '/play' do
-    @game = $game
+    @game = Game.instance
     erb :play
   end
 
   get '/attack' do
-    @game = $game
+    @game = Game.instance
     @game.attack(@game.non_current_turn)
     # @game.switch_player
     # @game.attack(@game.current_turn)
@@ -30,7 +30,7 @@ enable :sessions
   end
 
   get '/switch_player' do
-    @game = $game
+    @game = Game.instance
     @game.switch_player
     redirect '/play'
   end
