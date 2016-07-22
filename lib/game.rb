@@ -10,11 +10,13 @@ class Game
   end
 
   def player_1
-    @players[0]
+    @players.first
   end
 
   def player_2
-    @players[-1]
+    @players.last
   end
+
+
 
 end
