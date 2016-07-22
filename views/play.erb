@@ -6,7 +6,17 @@
 
 <h2><%= @game.current_turn.name %>: <%= @game.current_turn.hit_points %>HP</h2>
 
+<% if @game.current_turn.hit_points == 0 || @game.non_current_turn.hit_points == 0 %>
+
+<h2>You've lost!</h2>
+
+<h3>GAME OVER</h3>
+
+<%else%>
 
 <form action="/attack">
   <input type="submit" value="Attack!" />
 </form>
+
+
+<% end %>
